@@ -1,0 +1,136 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem;
+    background-color: white;
+    padding-inline: 3%;
+    position: relative;
+    z-index: 1000;
+}
+
+nav{
+
+    img{
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+
+    .logo-container{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        h1{
+            color: #f65c0a;
+        }
+
+        p{
+            color: #495057;
+        }
+    }
+}
+
+.searchbox{
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    padding: .8rem 1rem;
+    border-radius: 15px;
+
+    input{
+        border: none;
+        outline: none;
+        background-color: transparent;
+        width: 300px;
+    }
+
+    svg{
+        margin-right: 10px;
+    }
+}
+
+nav p{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:hover{
+        .dropdown{
+            visibility: visible;
+        }
+    }
+
+    
+ 
+
+    .dropdown{
+        position: absolute;
+        padding: 1rem;
+        top: 100%;
+        margin-top: 10px;
+        right: 0;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        visibility: hidden;
+        transition: .3s linear;
+
+        a{
+            display: block;
+            padding-bottom: 10px;
+        }
+    }
+
+
+}
+
+nav a{
+    color: #2f6ce5;
+    margin-left: 10px;
+}
+
+.navicon{
+    display: none;
+}
+
+.mobilenav{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.activenav{
+    left: 0 !important;
+}
+// responsivnes 
+
+@media (max-width:850px){
+
+    .navicon{
+        display: inline-block;
+    }
+
+    .mobilenav{
+        transition: .3s linear;
+        position: absolute;
+        top: 76px;
+        background-color: white;
+        width: 100%;
+        left: -100%;
+        flex-direction: column;
+        height: calc(100vh - 76px);
+        padding-top: 1rem;
+
+        p{
+            .dropdown{
+                visibility: visible;
+                width: 100%;
+                box-shadow: none;
+                text-align: center;
+            }
+        }
+    }
+
+}
